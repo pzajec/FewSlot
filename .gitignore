@@ -36,3 +36,4 @@ pretrain.tar
 .idea
 .vscode
 .venv
+venv/

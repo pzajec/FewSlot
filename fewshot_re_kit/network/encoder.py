@@ -11,7 +11,8 @@ class Encoder(nn.Module):
 
         self.max_length = max_length
         self.hidden_size = hidden_size
-        self.embedding_dim = word_embedding_dim + pos_embedding_dim * 2
+        #self.embedding_dim = word_embedding_dim + pos_embedding_dim * 2
+        self.embedding_dim = word_embedding_dim + pos_embedding_dim
         self.conv = nn.Conv1d(self.embedding_dim, self.hidden_size, 3, padding=1)
         self.pool = nn.MaxPool1d(max_length)
 
