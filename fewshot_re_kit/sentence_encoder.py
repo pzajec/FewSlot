@@ -144,19 +144,19 @@ class BERTPAIRSentenceEncoder(nn.Module):
         # tokens = ['[CLS]']
         tokens = []
         cur_pos = 0
-        pos1_in_index = 0
+        #pos1_in_index = 0
         pos2_in_index = 0
         for token in raw_tokens:
             token = token.lower()
-            if cur_pos == pos_head[0]:
-                tokens.append('[unused0]')
-                pos1_in_index = len(tokens)
+            #if cur_pos == pos_head[0]:
+            #    tokens.append('[unused0]')
+            #    pos1_in_index = len(tokens)
             if cur_pos == pos_tail[0]:
                 tokens.append('[unused1]')
                 pos2_in_index = len(tokens)
             tokens += self.tokenizer.tokenize(token)
-            if cur_pos == pos_head[-1]:
-                tokens.append('[unused2]')
+            #if cur_pos == pos_head[-1]:
+            #    tokens.append('[unused2]')
             if cur_pos == pos_tail[-1]:
                 tokens.append('[unused3]')
             cur_pos += 1
